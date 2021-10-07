@@ -16,8 +16,8 @@ r = 5; % Radius of wheels [cm]
 L = 10; % Width of robot platform [cm]
 xd = zeros(1,sl); % Vector to store global x_n
 yd = zeros(1,sl); % Vector to store global y_n
-xd1 = zeros(1,sl); % Vector to store global x_n for trapezoidal integration
-yd1 = zeros(1,sl); % Vector to store global y_n for trapezoidal integration
+xd1 = zeros(1,sl); % Vector to store global x_n for trap
+yd1 = zeros(1,sl); % Vector to store global y_n
 
 phd = zeros(1,sl); % Vector to store global \phi_n
 
@@ -31,13 +31,8 @@ w=(vR-vL)/L;
 dph=T*w;
 xd(ii+1)=xd(ii)+v*T*cos(phd(ii));
 yd(ii+1)=yd(ii)+v*T*sin(phd(ii));
-
-xd1(ii+1)=xd1(ii)+(v*T./2)*(cos(phd(ii)) + cos(phd(ii) + T*w));
-yd1(ii+1)=yd1(ii)+(v*T./2)*(sin(phd(ii)) + sin(phd(ii) + T*w));
-
 phd(ii+1)=phd(ii)+dph;
 end
+
+plot(xd,yd,'ks:','linewidth',2);
 hold on;
-plot(xd,yd,'ks:','linewidth',1);
-plot(xd1,yd1,'-o','linewidth',1);
-legend('Rectangular','Trapezoidal')
