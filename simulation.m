@@ -72,6 +72,10 @@ phd_exact(ii) = phd_exact(ii-1)+dph;
 xd3(ii+1)=xd3(ii)+v*T*(cos(phd(ii)+dph/2) );
 yd3(ii+1)=yd3(ii)+v*T*(sin(phd(ii)+dph/2) );
 
+xd4(ii)=xd4(ii-1)+((v*dph)./w)*(cos(phd_exact(ii-1)) - 0.5*sin(phd_exact(ii-1))*dph);
+yd4(ii)=yd4(ii-1)+((v*dph)./w)*(sin(phd_exact(ii-1)) + 0.5*cos(phd_exact(ii-1))*dph);
+phd_exact(ii) = phd_exact(ii-1)+dph;
+
 phd(ii+1)=phd(ii)+dph;
 end
 hold on;
@@ -80,5 +84,6 @@ plot(xd,yd,'ks:','linewidth',1);
 plot(xd1,yd1,'-o','linewidth',1);
 plot(xd2,yd2,'v','linewidth',1);
 plot(xd3,yd3,'x','linewidth',1);
-legend('Çontinuous','Rectangular','Trapezoidal','Éxact','Geometry-Based 1')
+plot(xd4,yd4,'^','linewidth',1);
+legend('Çontinuous','Rectangular','Trapezoidal','Éxact','Geometry-Based 1','Taylor')
 sgtitle('Discrete-time Kinematic models')
