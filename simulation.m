@@ -95,6 +95,7 @@ plot(xd3,yd3,'x','linewidth',1);
 plot(xd4,yd4,'^','linewidth',1);
 plot(xd5,yd5,'--','linewidth',1);
 legend('Çontinuous','Rectangular','Trapezoidal','Éxact','Geometry-Based 1','Taylor','RK4')
+xlabel('x'); ylabel('y');
 sgtitle('Discrete-time Kinematic models')
 
 %% Experiment 2
@@ -194,6 +195,6 @@ for j =1:6
 end
 legend('Rectangular','Trapezoidal','Éxact','Geometry-Based 1','Taylor','RK4')
 title('Sum squared error of each model versus varying sampling time');
-
+xlabel('Ts'); ylabel('Sum squared error');
 
 
