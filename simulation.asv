@@ -87,15 +87,14 @@ yd5(ii+1) = yd5(ii) + ((T*v)/6)*( sin(phd(ii)) + 2*sin(phd(ii)+dph/2) ...
 phd(ii+1)=phd(ii)+dph;
 end
 hold on;
-plot(xc,yc,'k','linewidth',2);
-plot(xd,yd,'ks:','linewidth',1.5);
-plot(xd1,yd1,'-o','linewidth',1.5);
-plot(xd2,yd2,'v','linewidth',1.5);
-plot(xd3,yd3,'x','linewidth',1.5);
-plot(xd4,yd4,'^','linewidth',1.5);
-plot(xd5,yd5,'--','linewidth',1.5);
-legend('Çontinuous','Rectangular','Trapezoidal','Éxact','Geometry-Based 1',...
-    'Taylor','RK4','fontsize',16,'location','best')
+plot(xc,yc,'k','linewidth',1.5)
+plot(xd,yd,'ks:','linewidth',1);
+plot(xd1,yd1,'-o','linewidth',1);
+plot(xd2,yd2,'v','linewidth',1);
+plot(xd3,yd3,'x','linewidth',1);
+plot(xd4,yd4,'^','linewidth',1);
+plot(xd5,yd5,'--','linewidth',1);
+legend('Çontinuous','Rectangular','Trapezoidal','Éxact','Geometry-Based 1','Taylor','RK4','fontsize',16,'locati')
 xlabel('x','fontsize',16); ylabel('y','fontsize',16);
 sgtitle('Discrete-time Kinematic models','fontsize',18)
 
@@ -194,8 +193,7 @@ for j =1:6
     hold on
     plot(all_Ts,sum_squared_error(j,:),'linewidth',2)
 end
-legend('Rectangular','Trapezoidal','Éxact','Geometry-Based 1','Taylor','RK4',...
-    'fontsize',16,'location','best')
+legend('Rectangular','Trapezoidal','Éxact','Geometry-Based 1','Taylor','RK4','fontsize',16,'location','best')
 title('\Sigma error^2 of each model versus varying sampling time','fontsize', 18);
 xlabel('Ts','fontsize', 16); ylabel('sum squared error','fontsize', 16);
 
