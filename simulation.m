@@ -116,7 +116,7 @@ xc = zeros(1,sl_c); % Vector to store CT x(t)
 yc = zeros(1,sl_c); % Vector to store CT y(t)
 phc = zeros(1,sl_c); % % Vector to store CT \phi(t)
 
-for ii=1:sl_c-1 % <= one less simulation for the reason mentioned above
+for ii=2:sl_c-1 % <= one less simulation for the reason mentioned above
 vR_c=r*wR_c(ii);
 vL_c=r*wL_c(ii);
 v_c=(vR_c+vL_c)/2;
